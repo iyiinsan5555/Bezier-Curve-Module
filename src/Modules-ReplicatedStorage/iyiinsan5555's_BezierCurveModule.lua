@@ -18,6 +18,8 @@ function BezierCurveModule:GetPoint(t)
     local controlPoints = self.ControlPoints
     local n = #controlPoints
 
+    t = math.clamp(t, 0, 1)
+
     if n == 2 then
         return Lerp(controlPoints[1], controlPoints[2], t)
     end
